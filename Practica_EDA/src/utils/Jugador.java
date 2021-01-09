@@ -2,20 +2,15 @@ package utils;
 
 public class Jugador {
 	
-	public String ID;
-	private int puntuacion;	
-
+	public String id;
+	public int puntuacion;	
+	boolean esAlta;
 	
-	public Jugador()
+	public Jugador(String id)
 	{
 		puntuacion = 0;	
+		this.id = id;
 	}	
-	
-	
-	public String getID()
-	{
-		return ID;
-	}
 
 }
 

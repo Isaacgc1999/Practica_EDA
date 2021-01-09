@@ -3,15 +3,15 @@ package utils;
 public class TablaDispersa {
 
 	static final int TAMTABLA=15;
-	private int numJugadores;
+	public int numJugadores;
 	private double factorCarga;//recomendable menor a 0.8
-	private Campeonato[] tabla;
+	public Jugador[] tabla;
 	
 	
 	public TablaDispersa()
 	{
 		//se inicializa la tabla y sus elementos a NULL
-		tabla=new Campeonato[TAMTABLA];
+		tabla=new Jugador[TAMTABLA];
 		for(int i=0; i<TAMTABLA;i++)
 		{
 			tabla[i]=null;
@@ -35,7 +35,7 @@ public class TablaDispersa {
 		
 		//bucle de exploración cuadratica
 		
-		while(tabla[p]!=null && !(tabla[p]).getID().equals(clave))
+		while(tabla[p]!=null && !(tabla[p]).id.equals(clave))
 		{
 			i++;
 			p=p+i*i;
@@ -59,7 +59,7 @@ public class TablaDispersa {
 	
 	public void insertar(Jugador j)
 	{
-		int pos = direccion(j.getID());
+		int pos = direccion(j.id);
 		if(tabla[pos]!=null)
 		numJugadores++;
 		factorCarga=(double)(numJugadores)/TAMTABLA;
@@ -68,11 +68,11 @@ public class TablaDispersa {
 	}
 	
 	//devuelve una referencia a un elemento di lo encuentra en la tabla y devuelve NULL si no lo encuentra o fue dado de baja
-	public Campeonato buscar(String clave)
+	public Jugador buscar(String clave)
 	{
 		
 		int pos=direccion(clave);
-		Campeonato pr=tabla[pos];
+		Jugador pr=tabla[pos];
 		if(pr!=null)
 				pr=null;
 		
