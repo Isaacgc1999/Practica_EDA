@@ -2,7 +2,7 @@ package utils;
 
 public class TablaDispersa {
 
-	static final int TAMTABLA=15;
+	static final int TAMTABLA=19;
 	public int numJugadores;
 	private double factorCarga;//recomendable menor a 0.8
 	public Jugador[] tabla;
@@ -60,11 +60,10 @@ public class TablaDispersa {
 	public void insertar(Jugador j)
 	{
 		int pos = direccion(j.id);
-		if(tabla[pos]!=null)
+		tabla[pos] = j;
 		numJugadores++;
 		factorCarga=(double)(numJugadores)/TAMTABLA;
 		if(factorCarga>0.5) System.out.println("\n#### EL FACTOR DE CARGA SUPERA EL 50%, conviene aumentar el tamaño");
-		
 	}
 	
 	//devuelve una referencia a un elemento di lo encuentra en la tabla y devuelve NULL si no lo encuentra o fue dado de baja
@@ -72,11 +71,11 @@ public class TablaDispersa {
 	{
 		
 		int pos=direccion(clave);
-		Jugador pr=tabla[pos];
-		if(pr!=null)
-				pr=null;
+		Jugador j=tabla[pos];
+		if(j!=null) 
+			if(!j.esAlta) j = null;
 		
-		return pr;
+		return j;
 	}
 	
 	//para dar de baja se siguen los mismos pasos que para buscar y se pone a false el atributo esAlta

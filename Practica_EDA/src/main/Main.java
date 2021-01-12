@@ -16,13 +16,12 @@ public class Main {
 			System.out.println("Introduce la opcion que quieras");
 			System.out.println("");
 			System.out.println("0. Exit");
-			System.out.println("1. Insertar Jugador");
+			System.out.println("1. Insertar jugador");
 			System.out.println("2. Anyadir puntos");
-			System.out.println("3. Insertar Jugador");
-			System.out.println("4. Visualizar Ronda");		
-			System.out.println("5. Eliminar Puntos");
-			System.out.println("6. Eliminar Jugador");
-			System.out.println("7. Ver puntuaciones");
+			System.out.println("3. Visualizar ronda");
+			System.out.println("4. Eliminar puntos");		
+			System.out.println("5. Eliminar jugador");
+			System.out.println("6. Ver puntuaciones");
 
 			option = input.nextInt();
 				
@@ -31,13 +30,14 @@ public class Main {
 						break;
 				case 2: c.anyadirPuntos();	
 						break;
-				case 3:c.eliminarPuntos();	
+				case 3: //c.visualizarRonda();	
 						break;		
-				case 4: c.eliminarJugador();	
+				case 4: c.eliminarPuntos();
 						break;
-				case 5: //c.verPuntuaciones();	
-						break;
-			
+				case 5: c.eliminarJugador();	
+						break;	
+				case 6: //c.verPuntuaciones();	
+					break;	
 			}
 			
 			
