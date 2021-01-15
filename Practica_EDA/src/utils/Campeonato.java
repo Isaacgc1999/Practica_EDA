@@ -16,18 +16,8 @@ public class Campeonato {
 			  nombre = input.nextLine();
 		}	
 		Jugador j = new Jugador(nombre);
-		for(int i=0;i<19;i++)
-		{
-			if(j.id != campeonato.tabla[i].id) {
-				campeonato.insertar(j);
-				j.esAlta = true;
-			}
-			else {
-				System.out.println("Ya existe un jugador registrado con el mismo nombre");
-			}
 
-		}
-		
+		campeonato.insertar(j);	
 		
 	}
 	
